@@ -1,12 +1,17 @@
 class Pakuri:
     def __init__(self, species):  # Initialize the pakuri object with species attribute
-        self.name = species
+        self.species = species
         self.attack = (len(species) * 7) + 9
         self.defense = (len(species) * 5) + 17
         self.speed = (len(species) * 6) + 13
 
+    def __lt__(self, other):
+        # I learned how the sorted function works and abused it with operator overloading.
+        # Pretty cool, in my opinion :)
+        return self.species < other.species
+
     def get_species(self):  # Returns the species of this critter
-        pass
+        return self.species
 
     def get_attack(self):  # Returns the attack value for this critter
         # Initial attack value: (len(species) * 7) + 9
