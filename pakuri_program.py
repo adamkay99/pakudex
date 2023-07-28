@@ -6,6 +6,8 @@ def main():
     while True:
         try:
             capacity = int(input("Enter max capacity of the Pakudex: "))
+            if capacity <= 0:
+                raise ValueError
             break
         except:
             print("Please enter a valid size.")
